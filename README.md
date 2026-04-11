@@ -8,7 +8,7 @@ and record that fraction; for instance, if the tosses proceeded as tails, heads,
 heads, heads you would record the fraction $\frac{3}{5}$.
 Now perform a second run of coin-tosses, starting afresh and again recording a fraction that
 exceeds $\frac{1}{2}$ (starting afresh means that you ignore all earlier tosses). Repeat. As you perform
-more and more such trials, the average of the fractions will approach $\frac{\pi}{4}$"
+more and more such trials, the average of the fractions will approach $\frac{\pi}{4}$."
 
 Colloquially, an instance of this coin toss game ends when we count one more heads than tails. Jim Propp
 suggests in his paper that if the termination criteria was instead $\textit{two}$ more heads than tails, the
