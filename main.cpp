@@ -5,6 +5,7 @@
 #include <cmath>
 
 #define PIOVERFOUR (M_PI / 4)
+#define LNTWO (M_LN2)
 #define VERBOSE 1
 
 struct Score {
@@ -30,13 +31,13 @@ Score toss_coins(int n, std::mt19937& gen) {
     return {heads, n - heads};
 }
 
-Summary toss_coins_until_more_heads(std::mt19937& gen) {
+Summary toss_coins_until_more_heads(std::mt19937& gen, int surplus) {
     int heads = 0;
     int tails = 0;
     int tosses = 0;
     std::bernoulli_distribution coin(0.5);
 
-    while (heads <= tails) {
+    while (heads < tails + surplus) {
         ++tosses;
         if (coin(gen)) {
             ++heads;
@@ -54,23 +55,24 @@ int main() {
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    int tries = pow(2, 14);
+    int tries = pow(2, 16);
     long double avg = 0.0L;
+    int surplus = 2;
 
     for (long i = 0; i < tries; i++) {
-        Summary result = toss_coins_until_more_heads(gen);
+        Summary result = toss_coins_until_more_heads(gen, surplus);
 
         avg = (avg * (i+1) + result.fraction_heads) / ((i+1) + 1);
 
         if (VERBOSE && i % 1000 == 0) {
             std::cout << "trial=" << i
                       << " avg=" << avg
-                      << " target=" << M_PI/4
-                      << " delta=" << abs(avg - PIOVERFOUR) << '\n';
+                      << " target=" << ((surplus == 1) ? PIOVERFOUR : LNTWO)
+                      << " delta=" << abs(avg - ((surplus == 1) ? PIOVERFOUR : LNTWO)) << '\n';
         }
     }
 
-    std::cout << "final delta=" << abs(avg - PIOVERFOUR) << std::endl;
+    std::cout << "final delta=" << abs(avg - ((surplus == 1) ? PIOVERFOUR : LNTWO)) << std::endl;
 
    return 0;
 }
