@@ -27,4 +27,4 @@ $$
 $$
 
 Thanks to some very smart folks on MathsStackExchange and this simulation, it has been proved that the quantity this
-simulation evaluates is the PhiLerch ($\Phi$) special function, specifically $\Phi(1, -1, \frac{s}{2})$. Read more about it [here](https://math.stackexchange.com/questions/5132523/unexpected-pi-and-ln2-in-simple-coin-toss-stopping-rule).
+simulation evaluates is the PhiLerch ($\Phi$) special function, specifically $\frac{s}{2}\Phi(1, -1, \frac{s}{2})$. Read more about it [here](https://math.stackexchange.com/questions/5132523/unexpected-pi-and-ln2-in-simple-coin-toss-stopping-rule).
