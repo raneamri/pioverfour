@@ -1,6 +1,6 @@
 # $$\frac{\pi}{4}$$
 
-pioverfour is a simple simulation of the phenomenon described in [this](https://arxiv.org/abs/2602.14487) paper.
+$$\frac{\pi}{4}$$ is a simple Monte-Carlo simulation of the phenomenon described in [this](https://arxiv.org/abs/2602.14487) paper.
 
 "Toss a coin until the first time the observed proportion of heads exceeds $\frac{1}{2}$
 (that is, until the cumulative number of heads exceeds the cumulative number of tails)
