@@ -12,6 +12,19 @@ more and more such trials, the average of the fractions will approach $\frac{\pi
 
 Colloquially, an instance of this coin toss game ends when we count one more heads than tails. Jim Propp
 suggests in his paper that if the termination criteria was instead $\textit{two}$ more heads than tails, the
-average of the fraction converges to $\ln 2$.
+average of the fraction converges to $\ln 2$. Let the surplus of heads over tails required for the game to
+terminated be $s$. At $s = 1$, we see convergence to $\frac{\pi}{4}$ and for $s = 2$ to $\ln 2$. This simulation
+allows to generalise for any $s$. For $s = 3$, the simulation hints at convergence towards $\frac{\pi^2}{6} - 1$. Curiously, I can't seem to guess the pattern here, but it seems that as $s$ approaches infinity, the ratio approaches $\frac{1}{2}$.
 
-This simulation serves to check both convergences.
+A similar research to the one stated above can be found [here](https://math.mit.edu/~apost/courses/18.204-2016/18.204_Jon_Lu_final_paper.pdf). In this research, Jon Lu states his interest in a repeat analysis with a biased coin.
+The simulation described in this program uses a `bernoulli_distribution` to simulate coin tosses and therefore allows
+for such bias in our distribution to be parametrised, potentially contributing to further research on this topic.
+
+The quantity calculated by the simulation is
+
+$$
+\mathbb{E}\left[\frac{H}{T_s}\right]
+$$
+
+Thanks to some very smart folks on MathsStackExchange and this simulation, it has been proved that the quantity this
+simulation evaluates is the PhiLerch ($\Phi$) special function, specifically $\Phi(1, -1, \frac{s}{2})$. Read more about it [here](https://math.stackexchange.com/questions/5132523/unexpected-pi-and-ln2-in-simple-coin-toss-stopping-rule).

@@ -1,1 +1,6 @@
 main
+.DS_Store
+uv.lock
+*.csv
+*.png
+*.pdf
