@@ -18,9 +18,9 @@ allows for generalisation for any $s$. For $s = 3$, the simulation hints at conv
 
 A similar research to the one stated above can be found [here](https://math.mit.edu/~apost/courses/18.204-2016/18.204_Jon_Lu_final_paper.pdf). In this research, Jon Lu states his interest in a repeat analysis with a biased coin.
 The simulation described in this program uses a `bernoulli_distribution` to simulate coin tosses and therefore allows
-for such bias in our distribution to be parametrised, potentially contributing to further research on this topic.
+for such bias to be parametrised.
 
-The quantity calculated by the simulation is
+The quantity calculated in the simulation is
 
 $$
 \mathbb{E}\left[\frac{H}{T_s}\right]
